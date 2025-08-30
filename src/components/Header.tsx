@@ -1,23 +1,23 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native'
-import UserAvatar from './UserAvatar';
-import BackButton from './BackButton';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import UserAvatar from "./UserAvatar";
+import BackButton from "./BackButton";
 
 export default function Header() {
   return (
     <>
-    <View style={styles.container}>
-        <UserAvatar />
+      <View style={styles.container}>
         <BackButton />
-    </View>
+        <UserAvatar />
+      </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: 17
-    }
-})
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 17,
+  },
+});
