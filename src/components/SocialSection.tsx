@@ -3,11 +3,19 @@ import { View, StyleSheet, Text } from "react-native";
 import SocialCircle from "./SocialCircle";
 import SendButton from "./SendButton";
 
-export default function SocialSection() {
+interface Props {
+  key: string;
+  title: string;
+  icon: React.ReactNode;
+  onPress: () => void;
+}
+
+export default function SocialSection(props: Props) {
+  const { icon, title } = props;
   return (
     <View style={styles.container}>
-      <SocialCircle />
-      <Text style={styles.title}>WhatsApp</Text>
+      <View style={styles.circle}>{icon}</View>
+      <Text style={styles.title}>{title}</Text>
       <SendButton />
     </View>
   );
@@ -27,5 +35,15 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     color: "#8083A3",
+  },
+  circle: {
+    height: 46,
+    width: 46,
+    borderRadius: 23,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    borderColor: "#E4E6E8",
+    borderWidth: 1,
   },
 });

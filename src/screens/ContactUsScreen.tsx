@@ -2,6 +2,10 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Header from "../components/Header";
 import SocialSection from "../components/SocialSection";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { socialPlatforms } from "../../config/icon-config";
 
 export default function ContactUsScreen() {
   return (
@@ -12,7 +16,31 @@ export default function ContactUsScreen() {
       <Text style={styles.screenTitle}>Contact Us</Text>
       <View style={styles.socialContainer}>
         <Text style={styles.socialHeader}>Social Media Platforms</Text>
-        <SocialSection />
+        {socialPlatforms.map((platform) => {
+          const IconComponent =
+            platform.library === "FontAwesome"
+              ? FontAwesome
+              : platform.library === "AntDesign"
+              ? AntDesign
+              : platform.library === "MaterialIcons"
+              ? MaterialIcons
+              : FontAwesome; // default
+
+          return (
+            <SocialSection
+              key={platform.id}
+              title={platform.title}
+              icon={
+                <IconComponent
+                  name={platform.name as any}
+                  size={24}
+                  color="#178AD9"
+                />
+              }
+              onPress={platform.action}
+            />
+          );
+        })}
       </View>
     </>
   );
