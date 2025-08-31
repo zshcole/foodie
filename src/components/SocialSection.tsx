@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import SocialCircle from "./SocialCircle";
 import SendButton from "./SendButton";
 
 interface Props {
