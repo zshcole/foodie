@@ -1,18 +1,5 @@
-import IntroScreen from './src/screens/IntroScreen';
-import ContactUsScreen from './src/screens/ContactUsScreen';
+import MeditationScreen from "./src/screens/MeditationScreen";
 
 export default function App() {
-  return (
-      // <IntroScreen />
-      <ContactUsScreen />
-  );
+  return <MeditationScreen />;
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
