@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import TabsComponent from "../components/Tabs";
 
 export default function MeditationScreen() {
   return (
@@ -7,6 +8,7 @@ export default function MeditationScreen() {
       <Text style={styles.header}>Meditations</Text>
 
       <Text style={styles.subHeader}>Lorem Ipsum is simply dummy text</Text>
+      <TabsComponent />
     </View>
   );
 }
