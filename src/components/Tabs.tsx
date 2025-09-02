@@ -10,10 +10,11 @@ export default function TabsComponent() {
   const [active, setActive] = useState("Live");
   return (
     <View style={styles.container}>
-      {tabsArr.map((tabName) => {
+      {tabsArr.map((tabName, idx) => {
         const isActive = active === tabName;
         return (
           <TouchableOpacity
+            key={idx}
             style={[styles.button, isActive && { backgroundColor: ACTIVE_TAB }]}
           >
             <Text

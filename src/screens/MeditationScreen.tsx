@@ -1,15 +1,19 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import TabsComponent from "../components/Tabs";
+import CardSection from "../components/CardSection";
 
 export default function MeditationScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Meditations</Text>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.header}>Meditations</Text>
 
-      <Text style={styles.subHeader}>Lorem Ipsum is simply dummy text</Text>
-      <TabsComponent />
-    </View>
+        <Text style={styles.subHeader}>Lorem Ipsum is simply dummy text</Text>
+        <TabsComponent />
+      </View>
+      <CardSection />
+    </>
   );
 }
 
