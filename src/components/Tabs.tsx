@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const tabsArr = ["Live", "Recorded"];
-const ACTIVE_TAB = "#75563B";
+const ACTIVE_TAB = "#9d5b5bff";
 const ACTIVE_TEXT = "#ffffff";
 const INACTIVE_TEXT = "#2C2016";
 

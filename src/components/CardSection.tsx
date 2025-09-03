@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import VideoIcon from "./Icons";
 
 export default function CardSection() {
   return (
@@ -10,12 +11,16 @@ export default function CardSection() {
       }}
       imageStyle={styles.image}
     >
+      <View style={styles.overlay} />
       <View style={styles.pill}>
         <Text style={styles.status}>Live</Text>
       </View>
       <View style={styles.cardContent}>
         <Text style={styles.cardTitle}>Meditations</Text>
-        <Text style={styles.cardDate}>31st Jan - 09:00 am</Text>
+        <View style={styles.dateContainer}>
+          <VideoIcon />
+          <Text style={styles.cardDate}>31st Jan - 09:00 am</Text>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -46,6 +51,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#ffffff",
   },
+  dateContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+  },
   cardDate: {
     fontSize: 12,
     fontWeight: "regular",
@@ -64,5 +74,9 @@ const styles = StyleSheet.create({
   },
   status: {
     color: "#ffffff",
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0, 0, 0, 0.45)",
   },
 });
