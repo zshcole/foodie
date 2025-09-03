@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import VideoIcon from "./Icons";
 
-export default function CardSection() {
+export default function Card() {
   return (
     <ImageBackground
       style={styles.container}
@@ -28,11 +28,10 @@ export default function CardSection() {
 
 const styles = StyleSheet.create({
   container: {
-    gap: 16,
     height: 161,
-    width: 166,
+    width: 155,
     borderRadius: 12,
-    margin: 20,
+    margin: 15,
     overflow: "hidden",
   },
   image: {

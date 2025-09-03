@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import TabsComponent from "../components/Tabs";
-import CardSection from "../components/CardSection";
+import Card from "../components/Card";
+import { dummyData } from "../data/data";
 
 export default function MeditationScreen() {
   return (
@@ -12,7 +13,17 @@ export default function MeditationScreen() {
         <Text style={styles.subHeader}>Lorem Ipsum is simply dummy text</Text>
         <TabsComponent />
       </View>
-      <CardSection />
+      <FlatList
+        keyExtractor={(item) => item.id}
+        data={dummyData}
+        numColumns={2}
+        renderItem={({ item }) => <Card />}
+        showsVerticalScrollIndicator={false}
+        columnWrapperStyle={{
+          marginBottom: 16,
+          justifyContent: "space-between",
+        }}
+      />
     </>
   );
 }
