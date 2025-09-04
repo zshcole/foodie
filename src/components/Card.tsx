@@ -1,6 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import VideoIcon from "./Icons";
+
+const PhoneWidth = Dimensions.get("window").width;
+const cardWidth = (PhoneWidth - 16 * 3) / 2;
 
 export default function Card() {
   return (
@@ -29,9 +38,9 @@ export default function Card() {
 const styles = StyleSheet.create({
   container: {
     height: 161,
-    width: 155,
+    width: cardWidth,
     borderRadius: 12,
-    margin: 15,
+    margin: 12,
     overflow: "hidden",
   },
   image: {
