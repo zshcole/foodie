@@ -11,12 +11,19 @@ import VideoIcon from "./Icons";
 const PhoneWidth = Dimensions.get("window").width;
 const cardWidth = (PhoneWidth - 16 * 3) / 2;
 
-export default function Card() {
+interface Props {
+  image: string;
+  title: string;
+  date: string;
+}
+
+export default function Card(props: Props) {
+  const { image, title, date } = props;
   return (
     <ImageBackground
       style={styles.container}
       source={{
-        uri: "https://i.pinimg.com/736x/39/d4/ce/39d4ce426035d77ed11b6ab952c4a1b8.jpg",
+        uri: image,
       }}
       imageStyle={styles.image}
     >
@@ -25,10 +32,10 @@ export default function Card() {
         <Text style={styles.status}>Live</Text>
       </View>
       <View style={styles.cardContent}>
-        <Text style={styles.cardTitle}>Meditations</Text>
+        <Text style={styles.cardTitle}>{title}</Text>
         <View style={styles.dateContainer}>
           <VideoIcon />
-          <Text style={styles.cardDate}>31st Jan - 09:00 am</Text>
+          <Text style={styles.cardDate}>{date}</Text>
         </View>
       </View>
     </ImageBackground>

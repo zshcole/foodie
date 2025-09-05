@@ -17,7 +17,9 @@ export default function MeditationScreen() {
         keyExtractor={(item) => item.id}
         data={dummyData}
         numColumns={2}
-        renderItem={({ item }) => <Card />}
+        renderItem={({ item }) => (
+          <Card image={item.image} title={item.title} date={item.date} />
+        )}
         showsVerticalScrollIndicator={false}
         columnWrapperStyle={{
           marginBottom: 16,
