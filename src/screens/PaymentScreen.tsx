@@ -1,27 +1,34 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import BackButton from "../components/BackButton";
+import PaymentMethod from "../components/PaymentMethod";
 
 export default function PaymentScreen() {
   return (
     <View style={styles.container}>
-      <BackButton />
-      <Text style={styles.header}>Payment</Text>
+      <View style={styles.content}>
+        <BackButton />
+        <Text style={styles.header}>Payment</Text>
+      </View>
+      <PaymentMethod />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    flex: 1,
+    paddingTop: 50,
+    paddingHorizontal: 24,
+  },
+  content: {
+    alignItems: "center",
     flexDirection: "row",
-    paddingHorizontal: 20,
   },
   header: {
     fontSize: 17,
     fontWeight: "regular",
     color: "#181C2E",
-    marginTop: 7,
-    paddingLeft: 20,
+    marginStart: 18,
   },
 });
