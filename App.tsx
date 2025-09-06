@@ -1,5 +1,5 @@
-import MeditationScreen from "./src/screens/MeditationScreen";
+import PaymentScreen from "./src/screens/PaymentScreen";
 
 export default function App() {
-  return <MeditationScreen />;
+  return <PaymentScreen />;
 }
