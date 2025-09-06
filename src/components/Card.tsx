@@ -17,8 +17,7 @@ interface Props {
   date: string;
 }
 
-export default function Card(props: Props) {
-  const { image, title, date } = props;
+export default function Card({ image, title, date }: Props) {
   return (
     <ImageBackground
       style={styles.container}

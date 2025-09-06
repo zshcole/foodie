@@ -3,14 +3,11 @@ import { View, StyleSheet, Text } from "react-native";
 import SendButton from "./SendButton";
 
 interface Props {
-  key: string;
   title: string;
   icon: React.ReactNode;
-  onPress: () => void;
 }
 
-export default function SocialSection(props: Props) {
-  const { icon, title } = props;
+export default function SocialSection({ icon, title }: Props) {
   return (
     <View style={styles.container}>
       <View style={styles.circle}>{icon}</View>
