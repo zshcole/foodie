@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import BackButton from "../components/BackButton";
 import PaymentMethod from "../components/PaymentMethod";
+import { CashIcon, MasterCard } from "../components/Icons";
 
 export default function PaymentScreen() {
   return (
@@ -10,7 +11,12 @@ export default function PaymentScreen() {
         <BackButton />
         <Text style={styles.header}>Payment</Text>
       </View>
-      <PaymentMethod />
+      <PaymentMethod title="Cash" icon={<CashIcon />} isSelected={false} />
+      <PaymentMethod
+        title="MasterCard"
+        icon={<MasterCard />}
+        isSelected={true}
+      />
     </View>
   );
 }
