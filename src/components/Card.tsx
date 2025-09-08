@@ -6,7 +6,7 @@ import {
   ImageBackground,
   Dimensions,
 } from "react-native";
-import VideoIcon from "./Icons";
+import { VideoIcon } from "./Icons";
 
 const PhoneWidth = Dimensions.get("window").width;
 const cardWidth = (PhoneWidth - 16 * 3) / 2;
