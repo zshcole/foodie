@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { CashIcon } from "./Icons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -7,16 +7,18 @@ interface Props {
   isSelected: boolean;
   title: string;
   icon: React.ReactNode;
+  onPress: any;
 }
 
 export default function PaymentMethod({
   isSelected = false,
   title,
   icon,
+  onPress,
 }: Props) {
   return (
     <>
-      <View style={{ width: 85 }}>
+      <TouchableOpacity onPress={onPress} style={{ width: 85 }}>
         {isSelected && (
           <View style={styles.checkMarkContainer}>
             <Ionicons name="checkmark" size={20} color="white" />
@@ -26,7 +28,7 @@ export default function PaymentMethod({
           {icon}
         </View>
         <Text style={styles.text}>{title}</Text>
-      </View>
+      </TouchableOpacity>
     </>
   );
 }
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     marginTop: 8,
     color: "#000",
-    marginStart: 25,
+    textAlign: "center",
   },
   selectedPayment: {
     width: 86,
