@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import BackButton from "../components/BackButton";
 import PaymentList from "../components/PaymentList";
+import BankCard from "../components/BankCard";
 
 export default function PaymentScreen() {
   return (
@@ -11,6 +12,9 @@ export default function PaymentScreen() {
         <Text style={styles.header}>Payment</Text>
       </View>
       <PaymentList />
+      <View style={styles.bankCardContainer}>
+        <BankCard />
+      </View>
     </View>
   );
 }
@@ -30,5 +34,9 @@ const styles = StyleSheet.create({
     fontWeight: "regular",
     color: "#181C2E",
     marginStart: 18,
+  },
+  bankCardContainer: {
+    marginTop: 40,
+    paddingHorizontal: 16,
   },
 });
