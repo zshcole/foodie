@@ -4,6 +4,7 @@ import BackButton from "../components/BackButton";
 import PaymentList from "../components/PaymentList";
 import BankCard from "../components/BankCard";
 import AddNewButton from "../components/AddButton";
+import ConfirmButton from "../components/ConfirmButton";
 
 export default function PaymentScreen() {
   return (
@@ -19,6 +20,12 @@ export default function PaymentScreen() {
       <View style={styles.addNewContainer}>
         <AddNewButton />
       </View>
+      <View style={styles.totalsContainer}>
+        <Text style={styles.total_price}>
+          TOTAL: <Text style={styles.dollar_amount}>$96</Text>
+        </Text>
+      </View>
+      <ConfirmButton />
     </View>
   );
 }
@@ -45,5 +52,21 @@ const styles = StyleSheet.create({
   },
   addNewContainer: {
     paddingHorizontal: 16,
+  },
+  totalsContainer: {
+    paddingVertical: 70,
+    paddingHorizontal: 16,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  total_price: {
+    color: "#A0A5BA",
+    fontSize: 14,
+    fontWeight: 400,
+  },
+  dollar_amount: {
+    color: "#181C2E",
+    fontSize: 30,
+    fontWeight: 400,
   },
 });
