@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import BackButton from "../components/BackButton";
 import PaymentList from "../components/PaymentList";
 import BankCard from "../components/BankCard";
+import AddNewButton from "../components/AddButton";
 
 export default function PaymentScreen() {
   return (
@@ -14,6 +15,9 @@ export default function PaymentScreen() {
       <PaymentList />
       <View style={styles.bankCardContainer}>
         <BankCard />
+      </View>
+      <View style={styles.addNewContainer}>
+        <AddNewButton />
       </View>
     </View>
   );
@@ -37,6 +41,9 @@ const styles = StyleSheet.create({
   },
   bankCardContainer: {
     marginTop: 40,
+    paddingHorizontal: 16,
+  },
+  addNewContainer: {
     paddingHorizontal: 16,
   },
 });
