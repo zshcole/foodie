@@ -5,11 +5,13 @@ import PaymentList from "../components/PaymentList";
 import BankCard from "../components/BankCard";
 import AddNewButton from "../components/AddButton";
 import ConfirmButton from "../components/ConfirmButton";
+// Common Styles
+import { commonStyles } from "../assets/styles/commonStyles";
 
 export default function PaymentScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
+      <View style={[commonStyles.row, styles.content]}>
         <BackButton />
         <Text style={styles.header}>Payment</Text>
       </View>
@@ -20,7 +22,7 @@ export default function PaymentScreen() {
       <View style={styles.addNewContainer}>
         <AddNewButton />
       </View>
-      <View style={styles.totalsContainer}>
+      <View style={[commonStyles.row, styles.totalsContainer]}>
         <Text style={styles.total_price}>
           TOTAL: <Text style={styles.dollar_amount}>$96</Text>
         </Text>
@@ -37,7 +39,6 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: "center",
-    flexDirection: "row",
     paddingHorizontal: 24,
   },
   header: {
@@ -56,7 +57,6 @@ const styles = StyleSheet.create({
   totalsContainer: {
     paddingVertical: 70,
     paddingHorizontal: 16,
-    flexDirection: "row",
     alignItems: "center",
   },
   total_price: {
