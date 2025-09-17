@@ -10,7 +10,9 @@ export const commonStyles = StyleSheet.create({
   },
   centered: {
     justifyContent: 'center',
-    alignItems: 'center',
+  },
+  alignCenter: {
+    alignItems: "center",
   },
   spaceBetween: {
     justifyContent: 'space-between',
