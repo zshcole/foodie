@@ -11,7 +11,14 @@ export const COLORS = {
   error: '#e74c3c',
   success: '#2ecc71',
 };
-
+export const SPACING = {
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 48,
+};
 export const FONT_SIZES = {
   xs: 12,
   sm: 14,
@@ -33,3 +40,9 @@ export const BORDER_RADIUS = {
   xl: 20,
   round: 9999,
 };
+//SCREENS
+export const PAYMENT_SCREEN_COLOR = {
+    header: "#181C2E",
+    price: "#A0A5BA",
+    amount: "#181C2E"
+}

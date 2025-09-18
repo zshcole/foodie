@@ -8,11 +8,7 @@ import AddNewButton from "../components/AddButton";
 import ConfirmButton from "../components/ConfirmButton";
 // Common Styles
 import { commonStyles } from "../assets/styles/commonStyles";
-import {
-  FONT_SIZES,
-  FONT_WEIGHTS,
-  BORDER_RADIUS,
-} from "../assets/styles/theme";
+import { FONT_SIZES, PAYMENT_SCREEN_COLOR } from "../assets/styles/theme";
 
 export default function PaymentScreen() {
   return (
@@ -56,7 +52,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: FONT_SIZES.lg,
     fontWeight: "regular",
-    color: "#181C2E",
+    color: PAYMENT_SCREEN_COLOR.header,
     marginStart: 18,
   },
   bankCardContainer: {
@@ -71,12 +67,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   total_price: {
-    color: "#A0A5BA",
+    color: PAYMENT_SCREEN_COLOR.price,
     fontSize: FONT_SIZES.sm,
     fontWeight: 500,
   },
   dollar_amount: {
-    color: "#181C2E",
+    color: PAYMENT_SCREEN_COLOR.amount,
     fontSize: FONT_SIZES.xxxl,
     fontWeight: 400,
   },
