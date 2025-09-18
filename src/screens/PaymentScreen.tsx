@@ -1,17 +1,23 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+// Components
 import BackButton from "../components/BackButton";
 import PaymentList from "../components/PaymentList";
 import BankCard from "../components/BankCard";
 import AddNewButton from "../components/AddButton";
 import ConfirmButton from "../components/ConfirmButton";
+// Common Styles
+import { commonStyles } from "../assets/styles/commonStyles";
+import { FONT_SIZES, PAYMENT_SCREEN_COLOR } from "../assets/styles/theme";
 
 export default function PaymentScreen() {
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
+    <View style={[commonStyles.grow, styles.container]}>
+      <View
+        style={[commonStyles.row, commonStyles.alignCenter, styles.content]}
+      >
         <BackButton />
-        <Text style={styles.header}>Payment</Text>
+        <Text style={[styles.header]}>Payment</Text>
       </View>
       <PaymentList />
       <View style={styles.bankCardContainer}>
@@ -20,7 +26,13 @@ export default function PaymentScreen() {
       <View style={styles.addNewContainer}>
         <AddNewButton />
       </View>
-      <View style={styles.totalsContainer}>
+      <View
+        style={[
+          commonStyles.row,
+          commonStyles.alignCenter,
+          styles.totalsContainer,
+        ]}
+      >
         <Text style={styles.total_price}>
           TOTAL: <Text style={styles.dollar_amount}>$96</Text>
         </Text>
@@ -32,18 +44,15 @@ export default function PaymentScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingTop: 50,
   },
   content: {
-    alignItems: "center",
-    flexDirection: "row",
     paddingHorizontal: 24,
   },
   header: {
-    fontSize: 17,
+    fontSize: FONT_SIZES.lg,
     fontWeight: "regular",
-    color: "#181C2E",
+    color: PAYMENT_SCREEN_COLOR.header,
     marginStart: 18,
   },
   bankCardContainer: {
@@ -56,17 +65,15 @@ const styles = StyleSheet.create({
   totalsContainer: {
     paddingVertical: 70,
     paddingHorizontal: 16,
-    flexDirection: "row",
-    alignItems: "center",
   },
   total_price: {
-    color: "#A0A5BA",
-    fontSize: 14,
-    fontWeight: 400,
+    color: PAYMENT_SCREEN_COLOR.price,
+    fontSize: FONT_SIZES.sm,
+    fontWeight: 500,
   },
   dollar_amount: {
-    color: "#181C2E",
-    fontSize: 30,
+    color: PAYMENT_SCREEN_COLOR.amount,
+    fontSize: FONT_SIZES.xxxl,
     fontWeight: 400,
   },
 });
